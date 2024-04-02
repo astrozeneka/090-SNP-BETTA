@@ -9,16 +9,23 @@ source ~/.bashrc
 conda activate /tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/conda-envs/trimmomatic
 
 genomes=(
-  "ERR3332434"
-  "ERR3332435"
-  "ERR3332436"
-  "ERR3332437"
   "SRR18231392"
   "SRR18231393"
   "SRR18231394"
   "SRR18231395"
   "SRR18231396"
   "SRR18231397"
+  "SRR18231399"
+  "SRR18231401"
+  "SRR18231402"
+  "SRR18231403"
+  "SRR18231404"
+  "SRR18231405"
+  "SRR18231406"
+  "SRR18231407"
+  "SRR18231408"
+  "SRR18231409"
+  "SRR18231410"
 )
 
 READDIR="/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/betta-cleaned/reads"
