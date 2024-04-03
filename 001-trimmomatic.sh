@@ -28,14 +28,14 @@ genomes=(
   "SRR18231410"
 )
 
-READDIR="/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/betta-cleaned/reads"
+READDIR="/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/betta-raw/"
 ILLUMINACLIP="/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/conda-envs/trimmomatic/share/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa"
 mkdir -p data/trimmed_reads
 for genome in "${genomes[@]}"; do
   echo "Trimming $genome"
-  trimmomatic PE -phred33 "${READDIR}/${genome}_1.1.fq.gz" "${READDIR}/${genome}_2.2.fq.gz" \
+  trimmomatic PE -phred33 "${READDIR}/${genome}_1.fastq" "${READDIR}/${genome}_2.fastq" \
     data/trimmed_reads/${genome}_1.trimmed.fq.gz data/trimmed_reads/${genome}_1.unpaired.fq.gz \
     data/trimmed_reads/${genome}_2.trimmed.fq.gz data/trimmed_reads/${genome}_2.unpaired.fq.gz \
     ILLUMINACLIP:${ILLUMINACLIP}:2:30:10 \
-    LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+    LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:100
 done
