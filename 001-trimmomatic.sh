@@ -78,7 +78,7 @@ genomes=(
   "SRR7062763"
 )
 
-READDIR="/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/betta-raw/"
+READDIR="/tarafs/data/home/hrasoara/scratch/betta-raw/"
 ILLUMINACLIP="/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/conda-envs/trimmomatic/share/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa"
 mkdir -p data/trimmed_reads
 for genome in "${genomes[@]}"; do
