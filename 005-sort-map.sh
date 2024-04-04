@@ -10,8 +10,18 @@ module load BWA/0.7.17-intel-2019b
 module load SAMtools/1.9-intel-2019b
 
 genomes=(
-  "ERR3332435"
-  "ERR3332436"
+  "SRR18231392"
+  "SRR18231393"
+  "SRR18231394"
+  "SRR18231395"
+  "SRR18231396"
+  "SRR18231397"
+  "SRR18231399"
+  "SRR18231401"
+  "SRR18231402"
+  "SRR18231403"
+  "SRR18231404"
+  "SRR18231405"
 )
 
 mkdir -p "data/sorted-map"

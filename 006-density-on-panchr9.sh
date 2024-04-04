@@ -13,8 +13,18 @@ export PATH=$PATH:/tarafs/data/home/hrasoara/softwares/samtools-1.18/
 source venv/bin/activate
 
 genomes=(
-  "ERR3332435"
-  "ERR3332436"
+  "SRR18231392"
+  "SRR18231393"
+  "SRR18231394"
+  "SRR18231395"
+  "SRR18231396"
+  "SRR18231397"
+  "SRR18231399"
+  "SRR18231401"
+  "SRR18231402"
+  "SRR18231403"
+  "SRR18231404"
+  "SRR18231405"
 )
 
 BAM_DIR="data/sorted-map"
