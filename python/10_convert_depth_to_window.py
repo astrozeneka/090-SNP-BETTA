@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
         if window_id != current_window:
             if current_window != -1:
-                window_depth = int(window_depth / args.window)
+                window_depth = (window_depth / args.window)
                 print(current_window, window_depth)
             current_window = window_id
             window_depth = 0
