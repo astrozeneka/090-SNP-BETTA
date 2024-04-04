@@ -17,7 +17,7 @@ genomes=(
   "ERR3332435"
 )
 
-BAM_DIR="data/bam"
+BAM_DIR="data/map"
 mkdir -p data/reads_density
 for genome in "${genomes[@]}"; do
   echo "Computing density for $genome"
