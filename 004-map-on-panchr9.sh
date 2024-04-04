@@ -10,7 +10,7 @@ module load BWA/0.7.17-intel-2019b
 module load SAMtools/1.9-intel-2019b
 
 genomes=(
-  "ERR3332435"
+#  "ERR3332435"
   "ERR3332436"
   "ERR3332437"
   "SRR18231392"
@@ -49,7 +49,7 @@ for genome in "${genomes[@]}"; do
   echo "Mapping $genome"
   bwa mem -t 96 \
     data/assemblies/BSP9.gfa.fa \
-    "${READDIR}/${genome}_1.trimmed.fq.gz" "${READDIR}/${genome}_2.trimmed.fq.gz" \
+    "${READDIR}/${genome}_1.trimmed_fixed.fq.gz" "${READDIR}/${genome}_2.trimmed_fixed.fq.gz" \
     | samtools view -b > "data/map/${genome}.bam"
   exit
 done
