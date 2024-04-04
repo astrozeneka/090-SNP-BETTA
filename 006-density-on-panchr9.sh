@@ -13,15 +13,15 @@ export PATH=$PATH:/tarafs/data/home/hrasoara/softwares/samtools-1.18/
 source venv/bin/activate
 
 genomes=(
-  "ERR3332434"
   "ERR3332435"
+  "ERR3332436"
 )
 
-BAM_DIR="data/map"
+BAM_DIR="data/sorted-map"
 mkdir -p data/reads_density
 for genome in "${genomes[@]}"; do
   echo "Computing density for $genome"
-  samtools depth -a ${BAM_DIR}/${genome}.bam \
+  samtools depth -a ${BAM_DIR}/${genome}.sorted.bam \
     | python python/10_convert_depth_to_window.py --window 100 \
     > data/reads_density/${genome}.coverage.tsv
 done
