@@ -10,9 +10,6 @@ module load BWA/0.7.17-intel-2019b
 module load SAMtools/1.9-intel-2019b
 
 genomes=(
-#  "ERR3332435"
-  "ERR3332436"
-  "ERR3332437"
   "SRR18231392"
   "SRR18231393"
   "SRR18231394"
@@ -25,22 +22,6 @@ genomes=(
   "SRR18231403"
   "SRR18231404"
   "SRR18231405"
-  "SRR18231406"
-  "SRR18231407"
-  "SRR18231408"
-  "SRR18231409"
-  "SRR18231410"
-  "SRR18231411"
-  "SRR18231412"
-  "SRR18231413"
-  "SRR18231414"
-  "SRR18231415"
-  "SRR18231416"
-  "SRR18231417"
-  "SRR18231418"
-  "SRR18231419"
-  "SRR18231420"
-  "SRR18231421"
 )
 
 READDIR="data/trimmed_reads"
@@ -51,6 +32,5 @@ for genome in "${genomes[@]}"; do
     data/assemblies/BSP9.gfa.fa \
     "${READDIR}/${genome}_1.trimmed_fixed.fq.gz" "${READDIR}/${genome}_2.trimmed_fixed.fq.gz" \
     | samtools view -b > "data/map/${genome}.bam"
-  exit
 done
 echo "Done"
