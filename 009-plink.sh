@@ -51,6 +51,12 @@ cat <<EOF > phenotype.txt
 0
 EOF
 
+# calculate fisher association
+/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/Softwares/plink \
+  --allow-extra-chr \
+  --bfile data/plink/sex \
+  --fisher --out data/plink/sex
+
 echo "Gemma part 1"
 ~/proj5057-AGBKUB/ryan/conda-envs/gemma/bin/gemma -bfile data/plink/sex \
   -gk 1 \
