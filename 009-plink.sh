@@ -58,3 +58,15 @@ echo "Gemma part 1"
   -o gemma_kinship
 echo "Gemma part 1 done"
 
+echo "Gemma part 2"
+~/proj5057-AGBKUB/ryan/conda-envs/gemma/bin/gemma -bfile data/plink/sex \
+  -p phenotype.txt \
+  -k output/gemma_kinship.cXX.txt \
+  -lmm 1 \
+  -o gemma_lmm1
+echo "Gemma part 2 done"
+
+# Store the results
+mv output/* data/plink/
+rmdir output
+echo" PLINK pipeline done"
