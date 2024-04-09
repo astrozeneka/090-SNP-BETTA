@@ -10,6 +10,7 @@ export PATH=$PATH:/tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/Softwares
 
 mkdir -p data/plink
 /tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/Softwares/plink \
+  --geno 0.5 --mind 0.9 --maf 0.05 \
   --allow-extra-chr --make-bed --double-id --threads 96 \
   --vcf data/populations/populations.snps.vcf \
   --out data/plink/sex
@@ -53,7 +54,7 @@ EOF
 
 # calculate fisher association
 /tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/Softwares/plink \
-  --geno 0.25 --mind 0.1 --maf 0.05 \
+  --geno 0.5 --mind 0.9 --maf 0.05 \
   --allow-extra-chr \
   --bfile data/plink/sex \
   --allow-no-sex --fisher --out data/plink/sex
