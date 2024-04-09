@@ -53,6 +53,7 @@ EOF
 
 # calculate fisher association
 /tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/Softwares/plink \
+  --geno 0.25 --mind 0.1 --maf 0.05 \
   --allow-extra-chr \
   --bfile data/plink/sex \
   --fisher --out data/plink/sex
