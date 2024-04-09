@@ -8,7 +8,8 @@
 
 source ~/.bashrc
 
-mkdir data/beagle
+mkdir -p data/beagle
 # Use beagle software to impute missing genotypes
-beagle gt=data/populations/populations.snps.vcf out=../data/beagle/imputed.snps.vcf
+java -jar /tarafs/data/home/hrasoara/softwares/beagle.22Jul22.46e.jar \
+  gt=data/populations/populations.snps.vcf out=data/beagle/imputed.snps.vcf
 echo "Beagle done"
