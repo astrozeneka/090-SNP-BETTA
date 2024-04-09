@@ -10,7 +10,7 @@ mkdir -p data/beagle
 
 #Reorder the vcf file by using BCFTools sort
 module load BCFtools
-bcftools sort data/populations/populations.snps.vcf -o data/beagle/sorted.snps.vcf
+bcftools sort data/beagle/populations.snps.filtered.vcf -o data/beagle/sorted.snps.vcf
 
 #Remove duplicates using bcftools norm
 bcftools norm -D data/beagle/sorted.snps.vcf -o data/beagle/sorted.rmdup.snps.vcf
