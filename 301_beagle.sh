@@ -12,7 +12,10 @@ mkdir -p data/beagle
 module load BCFtools
 bcftools sort data/populations/populations.snps.vcf -o data/beagle/sorted.snps.vcf
 
+#Remove duplicates using bcftools norm
+bcftools norm -D data/beagle/sorted.snps.vcf -o data/beagle/sorted.rmdup.snps.vcf
+
 # Use beagle software to impute missing genotypes
 java -jar /tarafs/data/home/hrasoara/softwares/beagle.22Jul22.46e.jar \
-  gt=data/beagle/sorted.snps.vcf out=data/beagle/imputed.snps.vcf
+  gt=data/beagle/sorted.rmdup.snps.vcf out=data/beagle/imputed.snps.vcf
 echo "Beagle done"
