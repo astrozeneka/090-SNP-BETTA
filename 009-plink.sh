@@ -56,7 +56,7 @@ EOF
   --geno 0.25 --mind 0.1 --maf 0.05 \
   --allow-extra-chr \
   --bfile data/plink/sex \
-  --fisher --out data/plink/sex
+  --allow-no-sex --fisher --out data/plink/sex
 
 echo "Gemma part 1"
 ~/proj5057-AGBKUB/ryan/conda-envs/gemma/bin/gemma -bfile data/plink/sex \

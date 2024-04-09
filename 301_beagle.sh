@@ -6,14 +6,13 @@
 #SBATCH -J beagle
 #SBATCH -A proj5034
 
-source ~/.bashrc
-
-mkdir data/beagle
+mkdir -p data/beagle
 
 #Reorder the vcf file by using BCFTools sort
 module load BCFtools
 bcftools sort data/populations/populations.snps.vcf -o data/beagle/sorted.snps.vcf
 
 # Use beagle software to impute missing genotypes
-beagle gt=data/beagle/sorted.snps.vcf out=data/beagle/imputed.snps.vcf
+java -jar /tarafs/data/home/hrasoara/softwares/beagle.22Jul22.46e.jar \
+  gt=data/populations/populations.snps.vcf out=data/beagle/imputed.snps.vcf
 echo "Beagle done"
