@@ -14,5 +14,5 @@ bcftools sort data/populations/populations.snps.vcf -o data/beagle/sorted.snps.v
 
 # Use beagle software to impute missing genotypes
 java -jar /tarafs/data/home/hrasoara/softwares/beagle.22Jul22.46e.jar \
-  gt=data/populations/populations.snps.vcf out=data/beagle/imputed.snps.vcf
+  gt=data/beagle/sorted.snps.vcf out=data/beagle/imputed.snps.vcf
 echo "Beagle done"
