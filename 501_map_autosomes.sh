@@ -5,6 +5,10 @@
 #SBATCH -J map_autosome
 #SBATCH -A proj5034
 
+module purge
+module load BWA/0.7.17-intel-2019b
+module load SAMtools/1.9-intel-2019b
+
 genomes=(
   "SRR18231392"
   "SRR18231393"
@@ -28,12 +32,14 @@ genomes=(
 )
 ASSEMBLY=$1
 SLUG=$2
+
+READDIR="data/trimmed_reads"
 mkdir -p "data/map-${SLUG}"
 for genome in "${genomes[@]}"; do
   echo "Mapping $genome"
   bwa mem -t 96 \
-    data/assemblies/BSP9.gfa.fa \
+    "${ASSEMBLY}" \
     "${READDIR}/${genome}_1.trimmed_fixed.fq.gz" "${READDIR}/${genome}_2.trimmed_fixed.fq.gz" \
-    | samtools view -b > "data/map/${genome}.bam"
+    | samtools view -b > "data/map-${SLUG}/${genome}.bam"
 done
 echo "Done"
