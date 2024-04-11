@@ -2,7 +2,15 @@
 
 if __name__ == '__main__':
     # Open the vcf file
-    vcf_content = open("../data/plink/populations.snps.vcf").read().strip().split("\n")
+    #vcf_content = open("../data/plink/populations.snps.vcf").read().strip().split("\n")
+    # read from the stdin
+    vcf_content = []
+    while True:
+        try:
+            vcf_content.append(input())
+        except EOFError:
+            break
+
     header = [a for a in vcf_content if "#" in a]
     vcf_content = [a.split("\t") for a in vcf_content if "#" not in a]
     # Count the number of snps per scaffold
@@ -22,5 +30,8 @@ if __name__ == '__main__':
         outptut.append("\t".join(row))
     outptut = header + outptut
     # write the output
-    open("../data/plink/populations.snps.filtered.vcf", "w").write("\n".join(outptut))
-    print()
+    #open("../data/plink/populations.snps.filtered.vcf", "w").write("\n".join(outptut))
+    # Output to the stdout
+    for a in outptut:
+        print(a)
+
