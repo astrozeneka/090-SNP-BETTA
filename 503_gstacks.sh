@@ -3,14 +3,12 @@
 #SBATCH -N 1 -c 32
 #SBATCH -t 1-00:00:00
 #SBATCH -J gstacks
-#SBATCH -A proj5034
+#SBATCH -A proj5057
 
 module load foss/2021b
 export PATH=$PATH:/tarafs/data/project/proj5034-AGBKU/local/bin/
 
 cat <<EOF > popmap.txt
-ERR3332435.sorted	male
-ERR3332436.sorted	male
 SRR18231392.sorted	male
 SRR18231393.sorted	male
 SRR18231394.sorted	male
