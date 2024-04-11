@@ -9,7 +9,9 @@
 SLUG=$1
 
 /tarafs/data/home/hrasoara/proj5057-AGBKUB/ryan/Softwares/plink \
+	--threads 32 \
 	--bfile data/gstacks-${SLUG}/sex \
+	--allow-extra-chr \
 	--r \
 	--ld-window-r2 0.2 \
 	--ld-window 10 \
