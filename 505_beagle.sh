@@ -13,7 +13,7 @@ SLUG=$1
 bcftools sort data/gstacks-${SLUG}/populations.snps.vcf -o data/gstacks-${SLUG}/populations.snps.sorted.vcf
 
 # Filter the data
-cat data/gstacks-${SLUG}/populations.snps.sorted.vcf | python python/105_filter_data.py > data/gstacks-${SLUG}/populations.snps.sorted.rmdup.vcf
+cat data/gstacks-${SLUG}/populations.snps.sorted.vcf | python -u python/105_filter_data.py > data/gstacks-${SLUG}/populations.snps.sorted.rmdup.vcf
 
 # Remove the duplicates using bcftools norm
 bcftools norm -D data/gstacks-${SLUG}/populations.snps.sorted.rmdup.vcf -o data/gstacks-${SLUG}/populations.snps.sorted.rmdup.vcf

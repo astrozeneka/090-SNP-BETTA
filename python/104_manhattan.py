@@ -103,7 +103,8 @@ if __name__ == '__main__':
             plt.scatter(X, Y, s=3)
         plt.axhline(y=sig_thres, color='red', linewidth=0.3)
         plt.axhline(y=pot_thres, color='blue', linewidth=0.3)
-        # outfile = args.lmm1.replace(".txt", ".png")
+        outfile = "" + (args.lmm1 or args.fisher) + ".png"
         # outfile = outfile.replace("data/lmm1_results", "data/manhattan")
-        plt.savefig("../data/output.png")
+
+        plt.savefig(outfile)
     print("Done")
